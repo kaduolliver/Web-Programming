@@ -1,0 +1,14 @@
+body .main {
+    background-color: #519be6;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+}
+
+#resultado {
+    font-weight: bold;
+    color: #28a745;
+}
