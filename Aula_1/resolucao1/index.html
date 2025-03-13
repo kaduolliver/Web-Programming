@@ -1,114 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exemplo de Formulário com JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<style>
-
-    * { 
-        padding: 0px;
-        margin: 0px;
-    }
-
-    body {
-        background-color: antiquewhite;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .container {
-        background-color: rgb(202, 202, 202);
-        border-radius: 1rem;
-        padding: 10px;
-        margin: 10px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        flex-direction: column;
-    }
-</style>
-
 <body>
-
-    <div class="container">
-        <h2 id="area">Bem vindo!</h2>
-        <h3 id="media"></h3>
-        <p id="botao"></p>
-        <button onclick="entrar()">Acessar</button>
+    <div class="main">
+        <h1>Calculadora de Quadrado</h1>
+        <form id="numeroForm">
+            <label for="numero">Digite um número:</label>
+            <input type="number" id="numero" name="numero" required>
+            <button type="submit">Calcular Quadrado</button>
+        </form>
+        <p>O resultado é: <span id="resultado"></span></p>
     </div>
-
-    <script>
-        let area = document.getElementById('area')
-        let botao = document.getElementById('botao')
-        let media = document.getElementById('media')
-        let nome, curso;
-
-        function entrar() {
-            nome = prompt("Digite seu nome:")
-            curso;
-
-            if (nome === '' || nome === null) {
-                alert("Ops... algo deu errado!")
-                area.innerHTML = `Clique no "acessar" novamente`
-            } else {
-                curso = prompt("Digite seu curso: ")
-                if (curso === '' || curso === null) {
-                    alert("Ops... algo deu errado!")
-                    area.innerHTML = `Clique no "acessar" novamente`
-                } else {
-                    mensagem();
-                }
-            }
-        }
-
-        function mensagem() {
-            area.innerHTML = `Bem vindo ${nome}, cursando ${curso}`
-
-            let botaomedia = document.createElement("button")
-            botaomedia.innerText = "Calcular Média"
-            botaomedia.onclick = calcularMedia;
-            botao.appendChild(botaomedia)
-
-            let botaosair = document.createElement("button")
-            botaosair.innerText = "Sair"
-            botaosair.onclick = sair;
-            botao.appendChild(botaosair)
-        }
-
-
-
-        function calcularMedia() {
-
-            let nota, somar, calcmedia, loop;
-            somar = 0;
-
-            for (let i = 0; i < 3; i++ ) {
-                nota = Number(prompt(`Digite sua nota ${i+1}`));
-                while (nota === '' || nota === null) {
-                    nota = Number(prompt(`Digite sua nota ${i+1}`));
-                }
-                somar += nota;
-            }
-
-            calcmedia = somar/3
-            media.innerHTML = `Sua média ficou ${calcmedia}`
-        }
-
-        function sair() {
-            alert("Até mais!");
-            area.innerHTML = "Você saiu!";
-        }
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
