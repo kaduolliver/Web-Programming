@@ -12,11 +12,20 @@ window.addEventListener('scroll', function() {
 });
 
 const titulo = document.querySelector("h1");
-titulo.textContent = "CrediGuard";
+titulo.textContent = "";
 
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+const title = "CredGuard";
+const titleElement = document.getElementById("typing-title");
+let index = 0;
 
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
+function typeWriter() {
+    if (index < title.length) {
+        titleElement.innerHTML += title.charAt(index);
+        index++;
+        setTimeout(typeWriter, 200); // Velocidade da digitação (100ms por letra)
+    } else {
+        titleElement.style.borderRight = "none"; // Remove o cursor no final
+    }
+}
+
+typeWriter(); // Inicia a animação
