@@ -1,4 +1,4 @@
-const topBar = document.querySelector('.title');
+const topBar = document.querySelector('.top-bar');
 
 window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
