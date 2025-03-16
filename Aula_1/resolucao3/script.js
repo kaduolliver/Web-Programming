@@ -15,7 +15,7 @@ window.addEventListener('scroll', function() {
 const titulo = document.querySelector("h1");
 titulo.textContent = "";
 
-const title = "CredGuard";
+const title = "PigBank";
 const titleElement = document.getElementById("typing-title");
 let index = 0;
 

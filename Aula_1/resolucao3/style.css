@@ -11,6 +11,7 @@ body {
 #typing-title {
     position: fixed;
     padding-left: 20px;
+    padding-bottom: 10px;
     overflow: hidden; /* Esconde o texto até que ele seja "digitado" */
     border-right: 2px solid white; /* Cursor piscando */
     white-space: nowrap; /* Impede que o texto quebre em várias linhas */
