@@ -119,3 +119,59 @@ document.getElementById('valorInput').addEventListener('input', function(event) 
     // Atualiza o valor do campo de entrada
     input.value = valorFormatado;
 });
+
+// ... (código anterior mantido inalterado)
+
+// Botão Simular - Cálculo do Empréstimo
+document.querySelector('.simu').addEventListener('click', function() {
+    // Captura dos valores do formulário
+    const valorEmprestimo = parseFloat(
+        document.getElementById('valorInput').value
+        .replace(/[^\d,]/g, '')
+        .replace('.', '')
+        .replace(',', '.')
+    ) || 0;
+
+    const taxaJuros = parseFloat(
+        document.querySelector('.input-group.mb-3 input').value
+        .replace(',', '.')
+    ) || 0;
+
+    const tipoTaxa = document.getElementById('dropdownButton')
+                    .textContent.includes('Anual') ? 'anual' : 'mensal';
+
+    const parcelas = parseInt(
+        document.querySelector('.parcelas input').value
+    ) || 1;
+
+    // Cálculo da taxa mensal efetiva
+    let i = tipoTaxa === 'anual' 
+           ? (taxaJuros / 12) / 100 
+           : taxaJuros / 100;
+
+    // Cálculo da prestação
+    let prestacao;
+    if (i === 0) {
+        prestacao = valorEmprestimo / parcelas;
+    } else {
+        const fator = Math.pow(1 + i, parcelas);
+        prestacao = valorEmprestimo * (i * fator) / (fator - 1);
+    }
+
+    // Cálculos adicionais
+    const totalPago = prestacao * parcelas;
+    const juros = totalPago - valorEmprestimo;
+
+    // Formatação dos valores
+    const formatoBRL = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    });
+
+    // Atualização dos resultados
+    const resultados = document.querySelectorAll('.custom-grid .custom-col');
+    resultados[3].textContent = formatoBRL.format(prestacao);
+    resultados[5].textContent = formatoBRL.format(totalPago);
+    resultados[7].textContent = formatoBRL.format(valorEmprestimo);
+    resultados[9].textContent = formatoBRL.format(juros);
+});
