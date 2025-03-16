@@ -45,12 +45,38 @@ body {
     padding-left: 600px; /* Padding personalizado */
     padding-right: 520px;
     font-size: 1.2rem; /* Tamanho da fonte */
-  }
+}
+
+.parcelas {
+    position: relative;
+    top: 40px;
+    left: 250px;
+}
+
+/* Estilo para as parcelas */
+.parcelas .A {
+    padding: 5px 15px;
+    font-size: 18px;
+    color: white;
+    top: 39px;
+    right: 40px;
+    background-color: rgb(33, 113, 255);
+}
+
+.parcelas .B {
+    padding: 5px 15px;
+    font-size: 18px;
+    color: white;
+    bottom: 39px;
+    left: 208px;
+    background-color: rgb(33, 113, 255);
+}
+
 
 .pig-bank{
     position: relative;
-    bottom: 30%;
-    left: 45%;
+    bottom: 40%;
+    left: 55%;
 }
 
 .top-bar {
