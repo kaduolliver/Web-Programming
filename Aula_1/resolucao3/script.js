@@ -1,3 +1,4 @@
+//Animação da barra superior
 const topBar = document.querySelector('.top-bar');
 
 window.addEventListener('scroll', function() {
@@ -30,6 +31,31 @@ function typeWriter() {
 
 typeWriter(); // Inicia a animação
 
+//Alteração dos números ao apertar os 3 botões
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona os botões de rádio
+    const btnGarantia = document.getElementById('btnradio1');
+    const btnPessoal = document.getElementById('btnradio2');
+    const btnConsignado = document.getElementById('btnradio3');
+
+    // Seleciona o input da taxa de juros
+    const inputJuros = document.querySelector('.input-group.mb-3 input[type="text"]');
+
+    // Adiciona os eventos de clique aos botões
+    btnGarantia.addEventListener('click', function() {
+        inputJuros.value = '1,50';
+    });
+
+    btnPessoal.addEventListener('click', function() {
+        inputJuros.value = '9,60';
+    });
+
+    btnConsignado.addEventListener('click', function() {
+        inputJuros.value = '1,80';
+    });
+});
+
+//Botão dropdown da taxa de juros
 document.addEventListener('DOMContentLoaded', function() {
     // Seleciona o botão dropdown
     const dropdownButton = document.getElementById('dropdownButton');
