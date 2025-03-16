@@ -24,15 +24,45 @@ body {
 }
 
 #sub {
+    position: relative;
+    bottom: 20px;
     font-size: 27px;
-    padding-left: 140px;
+    left: 140px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: black;
+}
+
+.buttonsTitle {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    bottom: 95px;
+    left: 220px;
 }
 
 .btn-group {
     padding-left: 160px;
     bottom: 90px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttonsTitle2 {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    left: 220px;
+    bottom: 15px;
+}
+
+#dropdownButton {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(33, 113, 255);
+    transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+#dropdownButton:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse (azul mais escuro) */
 }
 
 .btn-custom:active {
@@ -50,33 +80,75 @@ body {
 .parcelas {
     position: relative;
     top: 40px;
-    left: 250px;
+    left: 200px;
+    
 }
 
 /* Estilo para as parcelas */
-.parcelas .A {
+.parcelas .minus {
     padding: 5px 15px;
     font-size: 18px;
     color: white;
     top: 39px;
-    right: 40px;
+    right: 38px;
     background-color: rgb(33, 113, 255);
+    transition: background-color 0.3s ease; /* Transição suave para hover */
 }
 
-.parcelas .B {
+.parcelas .minus:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse (azul mais escuro) */
+}
+
+.parcelas .plus {
     padding: 5px 15px;
     font-size: 18px;
     color: white;
     bottom: 39px;
-    left: 208px;
+    left: 224px;
     background-color: rgb(33, 113, 255);
+    transition: background-color 0.3s ease; /* Transição suave para hover */
 }
 
+.parcelas .plus:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse (azul mais escuro) */
+}
+
+.parcela-text {
+    position: relative;
+    right: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.valores {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    bottom: 65px;
+    right: 140px;
+}
+
+.simu {
+    background-color: rgb(33, 113, 255); /* Cor de fundo (azul) */
+    position: relative;
+    left: 80px;
+    color: #ffffff; /* Cor do texto (branco) */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave para hover */
+}
+
+.simu:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse (azul mais escuro) */
+}
 
 .pig-bank{
     position: relative;
     bottom: 40%;
     left: 55%;
+    max-width: 100%;
+    height: auto;
 }
 
 .top-bar {
