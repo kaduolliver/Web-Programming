@@ -143,9 +143,42 @@ body {
     background-color: #0056b3; /* Cor de fundo ao passar o mouse (azul mais escuro) */
 }
 
+/* Estilo para a linha (row) */
+.custom-grid {
+    position: relative;
+    top: 60px;
+    left: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    background-color: #ccc; /* Cor das linhas */
+    max-width: 600px;
+    min-height: 200px;
+}
+
+/* Estilo para as colunas (col) */
+.custom-col {
+
+    background-color: white; /* Cor de fundo das células */
+    border: 2px solid rgb(154, 186, 241); /* Borda das células */
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topside {
+    background-color: rgb(233, 243, 255);
+    font-weight: bold; /* Destacar os cabeçalhos */
+}
+
+.phrase {
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+
 .pig-bank{
     position: relative;
-    bottom: 40%;
+    bottom: 50%;
     left: 55%;
     max-width: 100%;
     height: auto;
